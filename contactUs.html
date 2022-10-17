@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ContactUs -  Page -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NG - IT Consulting | Digital Services</title>
+    <link rel="icon" type="image/x-icon" href="./images/ng.png" />
+    <!-- external - separate css file -->
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- embedded (head) css -->
+    <style>
+      h2 {
+        color: rgb(39, 32, 32, 0.8);
+      }
+      .error {
+        color: red;
+      }
+    </style>
+    <script>
+      function printError(elemId, hintMsg) {
+        document.getElementById(elemId).innerHTML = hintMsg;
+      }
+
+      // Defining a function to validate form
+      function validateForm() {
+        // Retrieving the values of form elements
+        var name = document.form.name.value;
+        var email = document.form.email.value;
+        var phone = document.form.phone.value;
+        var inquiry = document.form.inquiry.value;
+        var subject = document.form.subject.value;
+        var textarea = document.form.textarea.value;
+
+
+        // Defining error variables with a default value
+        var nameError = emailError = phoneError = inquiryError = subjectError = textareaError = true;
+
+        // Validate name
+        if (!name) {
+          printError("nameError", "Please enter your name");
+        } else {
+          if (!name.trim()) {
+            printError("nameError", "Please enter a valid name");
+          } else {
+            printError("nameError", "");
+            nameError = false;
+          }
+        }
+
+        // Validate email address
+        if (email == "") {
+          printError("emailError", "Please enter your email address");
+        } else {
+          // Regular expression for basic email validation
+          var regex = /^\S+@\S+\.\S+$/;
+          if (regex.test(email) === false) {
+            printError("emailError", "Please enter a valid email address");
+          } else {
+            printError("emailError", "");
+            emailError = false;
+          }
+        }
+
+        // Validate mobile number
+        if (!phone) {
+          printError("phoneError", "Please enter your phone number");
+        } else {
+          var regex = /^[1-9]\d{9}$/;
+          if (regex.test(phone) === false) {
+            printError(
+              "phoneError",
+              "Please enter a valid 10 digit phone number"
+            );
+          } else {
+            printError("phoneError", "");
+            phoneError = false;
+          }
+        }
+
+        // Validate inquiry
+        if (inquiry == "Select") {
+          printError("inquiryError", "Please select your type of inquiry");
+        } else {
+          printError("inquiryError", "");
+          inquiryError = false;
+        }
+
+        // Validate subject
+        if (subject.trim() == "") {
+          printError("subjectError", "Please enter your subject");
+        } else {
+          printError("subjectError", "");
+          subjectError = false;
+        }
+
+        // Validate textarea
+        if (textarea.trim() == "") {
+          printError("textareaError", "Please Specific details about your inquiry");
+        } else {
+          printError("textareaError", "");
+          textareaError = false;
+        }
+
+        // Prevent the form from being submitted if there are any errors
+        if (
+          (nameError || emailError || phoneError || inquiryError || subjectError || textareaError) ==
+          true
+        ) {
+          return false;
+        }
+        
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <!-- Link on Image Tag to navigate to home page  -->
+        <a href="./" title="Home"
+          ><img src="./images/ng.png" alt="ng" height="30" width="30" />
+        </a>
+        <!-- inline css -->
+        <span style="color: rgb(39, 32, 32, 0.9); font-weight: bold"
+          >NG limited</span
+        >
+      </div>
+
+      <ul>
+        <li><a href="./" tite="Home">Home</a></li>
+        <li><a href="./contactUs.html" tite="Contact Us">Contact Us</a></li>
+        <li>
+          <a href="./team.html" title="Our leadership team"
+            >Our leadership team</a
+          >
+        </li>
+        <li>
+          <a href="./projects.html" title="Projects">Projects</a>
+        </li>
+        <li>
+          <a href="./privacyPolicy.html" title="Privacy policy"
+            >Privacy policy</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <section class="body-container">
+      <section>
+        <img
+          src="./images/contactUs.jpg"
+          alt="Contact Us"
+          height="300"
+          width="100%"
+        />
+        <h2>Contact us</h2>
+
+        <p>
+          Please provide the following details along with your message so we may
+          appropriately assist you. We will protect your personal information in
+          accordance with our Privacy Policy.
+        </p>
+        <p>Required fields are marked with an asterisk(*)</p>
+        <article>
+          <!-- Form tag used to submit details -->
+          <form
+            name="form"
+            action="https://www.randyconnolly.com/tests/process.php"
+            onsubmit="return validateForm()"
+            novalidate
+            method="post"
+          >
+            <div>
+              <label for="name">Your name*</label> <br />
+              <input type="text" name="name" id="name"  placeholder="Enter your name"/>
+              <div class="error" id="nameError"></div>
+            </div>
+            <br />
+            <div>
+              <label for="email">Your e-mail address*</label> <br />
+              <input type="email" name="email" id="email" placeholder="Enter your email" />
+              <div class="error" id="emailError"></div>
+            </div>
+            <br />
+            <div>
+              <label for="phone">Your phone number</label> <br />
+              <!-- Added pattern attribute to validate the phone number -->
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                maxlength="10"
+              />
+              <div class="error" id="phoneError"></div>
+            </div>
+            <br />
+            <div>
+              <label for="inquiry">Type of inquiry*</label> <br />
+              <select name="inquiry" id="inquiry">
+                <option>Select</option>
+                <option>Employment</option>
+                <option>
+                  General business query
+                </option>
+              </select>
+              <div class="error" id="inquiryError"></div>
+            </div>
+            <br />
+            <div>
+              <label for="subject">Subject*</label> <br />
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="Enter your subject"
+              />
+              <div class="error" id="subjectError"></div>
+            </div>
+            <br />
+            <div>
+              <label for="textarea">Specific details about your inquiry*</label>
+              <br />
+              <textarea
+                type="textarea"
+                id="textarea"
+                name="textarea"
+                placeholder="Enter your enquiry"
+              >
+              </textarea>
+              <div class="error" id="textareaError"></div>
+            </div>
+            <br />
+
+            <button>Submit</button>
+          </form>
+        </article>
+      </section>
+      <hr />
+
+      <!-- footer -->
+      <footer>
+        <p>Copyright © 2022 NG Limited. All rights reserved</p>
+        <ul>
+          <li><a href="./contactUs.html" tite="Contact Us">Contact Us</a></li>
+          <li>
+            <a href="./team.html" title="Our leadership team"
+              >Our leadership team</a
+            >
+          </li>
+          <li>
+            <a href="./projects.html" title="Projects">Projects</a>
+          </li>
+          <li>
+            <a href="./privacyPolicy.html" title="Privacy policy"
+              >Privacy policy</a
+            >
+          </li>
+        </ul>
+      </footer>
+    </section>
+  </body>
+</html>

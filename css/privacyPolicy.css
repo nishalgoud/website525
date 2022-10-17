@@ -1,0 +1,19 @@
+#information-list {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1em;
+}
+#information-list > li {
+  position: relative;
+  counter-increment: step-counter;
+  font-size: 16px;
+}
+#information-list > li:before {
+  color: red;
+  content: counter(step-counter);
+  font-size: 35px;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}

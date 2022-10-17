@@ -1,0 +1,44 @@
+table {
+  /* override default font family  */
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: rgb(85, 85, 85, 0.3);
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(85, 85, 85, 1);
+  color: white;
+}
+/* Html attribute Id css selector */
+#projects {
+  border-spacing: 0;
+}
+
+.projects-body-container {
+  height: 30em;
+  /* To add scroll to the table */
+  overflow: scroll;
+}
+
+.projects-body-container table {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}

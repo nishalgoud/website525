@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Our leader ship -  Page -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NG - IT Consulting | Digital Services</title>
+    <link rel="icon" type="image/x-icon" href="./images/ng.png" />
+    <!-- external - separate css file -->
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- embedded (head) css -->
+    <style>
+      h2 {
+        color: rgb(39, 32, 32, 0.8);
+      }
+      .button {
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 6px;
+        background-color: #f1f1f1;
+        border: 2px solid rgb(85, 85, 85, 0.7);
+        color: black;
+        padding: 8px 24px;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+      /* adds different background color on hover */
+      .button:hover {
+        background-color: rgb(85, 85, 85, 1);
+        color: white;
+      }
+
+       /* converted block scope to inline  */
+      #programming-languages > div {
+        display: inline;
+      }
+     /* converted inline to block */
+      #experience > span {
+        display: block;
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <!-- Link on Image Tag to navigate to home page  -->
+        <a href="./" title="Home"
+          ><img src="./images/ng.png" alt="ng" height="30" width="30" />
+        </a>
+        <!-- inline css -->
+        <span style="color: rgb(39, 32, 32, 0.9); font-weight: bold"
+          >NG limited</span
+        >
+      </div>
+
+      <ul>
+        <li><a href="./" tite="Home">Home</a></li>
+        <li><a href="./contactUs.html" tite="Contact Us">Contact Us</a></li>
+        <li>
+          <a href="./team.html" title="Our leadership team"
+            >Our leadership team</a
+          >
+        </li>
+        <li>
+            <a href="./projects.html" title="Projects"
+              >Projects</a
+            >
+          </li>
+        <li>
+          <a href="./privacyPolicy.html" title="Privacy policy"
+            >Privacy policy</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <section class="body-container">
+      <section>
+        <h2>Our leadership team</h2>
+        <h3>Meet the leaders of NG</h3>
+
+        <div>
+          <img
+            src="./images/Nishal Goud Baddam Image.jpg"
+            alt="nishal"
+            height="100"
+            width="100"
+          />
+          <div>
+            <h3>Nishal Goud</h3>
+            <small>CEO & Co-Founder</small>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/nishal-goud-6b3827115/"
+                target="_blank"
+                ><img
+                  src="./images/linkedin.jpg"
+                  alt="Linkedin"
+                  width="25"
+                  height="25"
+                  title="Linkedin"
+              /></a>
+              <a href="https://www.instagram.com/nishal.goud/" target="_blank"
+                ><img
+                  src="./images/instagram.jpg"
+                  alt="Instagram"
+                  width="25"
+                  height="25"
+                  title="Instagram"
+              /></a>
+            </p>
+            <div id="programming-languages">
+              <div>Programming Languages:</div>
+              <div>
+                <a
+                  class="button"
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                  target="_blank"
+                  >Javascript</a
+                >
+
+                <a
+                  class="button"
+                  href="https://dev.java/learn/getting-started-with-java/"
+                  target="_blank"
+                  >Java</a
+                >
+
+                <a
+                  class="button"
+                  href="https://go.dev/doc/tutorial/getting-started"
+                  target="_blank"
+                  >Go</a
+                >
+
+                <a
+                  class="button"
+                  href="https://www.typescriptlang.org/docs/handbook/intro.html"
+                  target="_blank"
+                  >Typescript</a
+                >
+              </div>
+            </div>
+            <div id="experience">
+              <span>1) Having 5+ years experience in software development</span>
+              <span>2) Experience in agile methodology</span>
+              <span>3) worked asa full stack developer</span>
+              <span
+                >4) worked on variety of databases such as sql server, postgres
+                etc</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <!-- footer -->
+      <footer>
+        <p>Copyright © 2022 NG Limited. All rights reserved</p>
+        <ul>
+          <li><a href="./contactUs.html" tite="Contact Us">Contact Us</a></li>
+          <li>
+            <a href="./team.html" title="Our leadership team"
+              >Our leadership team</a
+            >
+          </li>
+          <li>
+            <a href="./projects.html" title="Projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="./privacyPolicy.html" title="Privacy policy"
+              >Privacy policy</a
+            >
+          </li>
+        </ul>
+      </footer>
+    </section>
+  </body>
+</html>
